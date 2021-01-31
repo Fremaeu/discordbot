@@ -1,18 +1,16 @@
 module.exports = {
-    name: 'skip',
-    aliases: ['sk'],
+    name: 'play',
+    aliases: ['p'],
     category: 'Music',
-    utilisation: '{prefix}skip',
+    utilisation: '{prefix}play [name/URL]',
 
-    execute(client, message) {
+    execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
 
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!args[0]) return message.channel.send(`${client.emotes.error} - Please indicate the title of a song !`);
 
-        client.player.skip(message);
-
-        message.channel.send(`${client.emotes.success} - The current music has just been **skipped** !`);
+        client.player.play(message, args.join(" "));
     },
 };
