@@ -8,8 +8,7 @@ module.exports = {
     },
 
     discord: {
-        token: 'NzkxMzk5ODE4Njc2Nzk3NDkw.X-OmhA.lXZLex1gqJl9-b6JR9F-Bc7u6Mg
-',
+        token: 'NzkxMzk5ODE4Njc2Nzk3NDkw.X-OmhA.7wKY3gu3OdhGmdcbhTdY1jwqfRs',
         prefix: '!',
         activity: 'Music',
     },
